@@ -1,6 +1,6 @@
 const Ruta = require('../models/registro_empresas');
 
-function registrarEmpresas(req, res) {
+function generar_tickets(req, res) {
     let myRutas = new Ruta(req.body);
     myRutas.save((err, result) => {
         res.status(200).send({ message: result });
@@ -26,9 +26,9 @@ function listar_datos(req, res) {
     let idRuta = req.params.id
     let result
     if (!idRuta) {
-        result = Ruta.find({}).sort('nombre_empresa')
+        result = Ruta.find({}).sort('id')
     } else {
-        result = Ruta.find({ _id: idRuta }).sort('nombre_empresa')
+        result = Ruta.find({ _id: idRuta }).sort('id')
     }
     result.exec(function (err, result) {
         if (err) {
@@ -43,7 +43,7 @@ function listar_datos(req, res) {
     })
 }
 
-function update_empresa(req, res) {
+function update_tickets(req, res) {
     let idRuta = req.params.id;
     Ruta.findOneAndUpdate({ _id: idRuta }, req.body, { new: true }, function (err, Ruta) {
         if (err) {
@@ -53,7 +53,7 @@ function update_empresa(req, res) {
     })
 }
 
-function delete_empresa(req, res) {
+function delete_tickets(req, res) {
     let idRuta = req.params.id;
     Ruta.findByIdAndDelete(idRuta,function(err,Ruta){
         if(err){
@@ -66,9 +66,9 @@ function delete_empresa(req, res) {
 
 }
 module.exports = {
-    registrarEmpresas,
+    generar_tickets,
     buscar,
     listar_datos,
-    update_empresa,
-    delete_empresa
+    update_tickets,
+    delete_tickets
 }
