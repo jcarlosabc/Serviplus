@@ -1,0 +1,86 @@
+tabla (registro_empresas)
+- correo corporatrivo
+- Nit de la empresa
+- Nombre de la empresa
+- actividad economica - descripcion de la empresa
+- direccion de la empresa
+============================
+tabla (empresas)
+- correo corporativo
+- clave
+- codigo unico generado
+===========================
+tabla (credenciales_corporativas_admin)
+- correo corporatrivo
+- clave
+- codigo unico generado
+============================
+tabla (casos_admin)
+- casos
+- codigo de caso
+- descripcion del caso
+- evidencia
+- fecha creacion del caso
+- estado del caso 
+- fecha finalizacion del caso
+==============================
+tabla (ing. especialistas)
+- nombre
+- apellido
+- correo
+- especializacion 
+- telefono
+=============================
+tabla (casos_asignados)
+- ing. especialista
+- especializacion
+- numero casos totales 
+- numero de casos pendientes 
+- numeros casos resueltos 
+=============================
+tabla (casos)
+- titulo del caso
+- codigo de caso
+- descripcion del caso
+- evidencia del caso
+- fecha creacion del caso
+- estado del caso 
+- fecha finalizacion del caso
+- ingeniero encargado
+=============================
+tabla (usuario)
+- correo
+- cedula
+- empresa cliente 
+==============================
+tabla (tickets)
+- titulo del caso
+- descripcion del caso
+- evidencia del caso 
+- codigo unico generado
+=============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
